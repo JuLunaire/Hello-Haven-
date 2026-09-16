@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://vtw18o56fdrb"]
+
+[ext_resource type="Texture2D" uid="uid://dif8g87oh47ol" path="res://icon.svg" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://bpw2rwqoiea0e" path="res://paleta_color_blocking.png" id="2_h2yge"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7thrc"]
+size = Vector2(128, 128)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1bvp3"]
+texture = ExtResource("2_h2yge")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_f57v6"]
+sources/0 = SubResource("TileSetAtlasSource_1bvp3")
+
+[node name="Main" type="Node" unique_id=1557599828]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1471267460]
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1353376099]
+texture = ExtResource("1_0xm2m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=98015567]
+position = Vector2(-1, -1)
+shape = SubResource("RectangleShape2D_7thrc")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1579999658]
+tile_set = SubResource("TileSet_f57v6")
