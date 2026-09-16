@@ -1,34 +1,53 @@
-[gd_scene format=3 uid="uid://vtw18o56fdrb"]
+[gd_scene format=4 uid="uid://vtw18o56fdrb"]
 
 [ext_resource type="Texture2D" uid="uid://dif8g87oh47ol" path="res://icon.svg" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://cj21p6xgknr8l" path="res://character_body_2d.gd" id="1_h2yge"]
 [ext_resource type="Texture2D" uid="uid://bpw2rwqoiea0e" path="res://paleta_color_blocking.png" id="2_h2yge"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7thrc"]
-size = Vector2(128, 128)
+size = Vector2(46, 46)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1bvp3"]
 texture = ExtResource("2_h2yge")
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_f57v6"]
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_1bvp3")
 
 [node name="Main" type="Node" unique_id=1557599828]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1471267460]
+script = ExtResource("1_h2yge")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1353376099]
+position = Vector2(25, 25)
+scale = Vector2(0.359375, 0.359375)
 texture = ExtResource("1_0xm2m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=98015567]
-position = Vector2(-1, -1)
+position = Vector2(25, 25)
 shape = SubResource("RectangleShape2D_7thrc")
 
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1354537920]
+position = Vector2(25, 25)
+position_smoothing_enabled = true
+position_smoothing_speed = 3.0
+
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1579999658]
+scale = Vector2(3, 3)
+tile_map_data = PackedByteArray("AAAAAA0AAAABAAAAAAABAA0AAAABAAAAAAACAA0AAAABAAAAAAADAA0AAAABAAAAAAAEAA0AAAABAAAAAAAFAA0AAAABAAAAAAAGAA0AAAABAAAAAAAHAA0AAAABAAAAAAAIAA0AAAABAAAAAAAJAA0AAAABAAAAAAAKAA0AAAABAAAAAAALAA0AAAABAAAAAAAMAA0AAAABAAAAAAANAA0AAAABAAAAAAAOAA0AAAABAAAAAAAPAA0AAAABAAAAAAAQAA0AAAABAAAAAAARAA0AAAABAAAAAAASAA0AAAABAAAAAAASAAwAAAABAAAAAAAAAAwAAAABAAAAAAAFAAoAAAABAAAAAAADAAwAAAABAAAAAAACAAwAAAABAAAAAAABAAwAAAABAAAAAAAEAAwAAAABAAAAAAAFAAwAAAABAAAAAAAGAAwAAAABAAAAAAAGAAoAAAABAAAAAAAHAAoAAAABAAAAAAAIAAwAAAABAAAAAAAHAAwAAAABAAAAAAAJAAwAAAABAAAAAAAPAAwAAAABAAAAAAAOAAwAAAABAAAAAAAKAAwAAAABAAAAAAALAAwAAAABAAAAAAAMAAwAAAABAAAAAAAQAAwAAAABAAAAAAARAAwAAAABAAAAAAANAAwAAAABAAAAAAAJAAgAAAABAAAAAAAMAAcAAAABAAAAAAAOAAYAAAAFAAAAAAAPAAYAAAAFAAAAAAAQAAYAAAAFAAAAAAARAAYAAAAFAAAAAAA=")
 tile_set = SubResource("TileSet_f57v6")
