@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpw2rwqoiea0e"
-path="res://.godot/imported/paleta_color_blocking.png-51d83bd2c97eb489f02ca0640e864c66.ctex"
+uid="uid://olo5jjvmogjo"
+path="res://.godot/imported/Cloudy Sky.png-f555baa95c234a68749d7a0986b13cd4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://paleta_color_blocking.png"
-dest_files=["res://.godot/imported/paleta_color_blocking.png-51d83bd2c97eb489f02ca0640e864c66.ctex"]
+source_file="res://Backgrounds/Cloudy Sky.png"
+dest_files=["res://.godot/imported/Cloudy Sky.png-f555baa95c234a68749d7a0986b13cd4.ctex"]
 
 [params]
 
