@@ -1,9 +1,13 @@
 extends CharacterBody2D
+@onready var animated_sprite = $AnimatedSprite2D
 
 
 const SPEED = 0
 const JUMP_VELOCITY = 0
 
+
+func _process(delta) -> void:
+	animated_sprite.play()
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -27,3 +31,5 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+func _ready() -> void:
+	$Label.text = "Hello?"

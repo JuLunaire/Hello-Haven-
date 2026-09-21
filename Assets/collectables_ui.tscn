@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cgscoq0d0uiac"]
+
+[ext_resource type="Texture2D" uid="uid://gh3oem8q4uku" path="res://Sprites/Strawberry.png" id="1_h4rxb"]
+
+[node name="Collectables_UI" type="Control" unique_id=1204107070]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 70.0
+offset_bottom = 70.0
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=343828705]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_h4rxb")
+
+[node name="Label" type="Label" parent="." unique_id=1941817405]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

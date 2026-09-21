@@ -1,9 +1,13 @@
 extends CharacterBody2D
+@onready var animated_sprite = $AnimatedSprite2D
 
 
-const SPEED = 400.0
-const JUMP_VELOCITY = -600.0
+const SPEED = 0
+const JUMP_VELOCITY = 0
 
+
+func _process(delta) -> void:
+	animated_sprite.play()
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -20,10 +24,12 @@ func _physics_process(delta: float) -> void:
 	if direction !=0:
 		velocity.x = direction * SPEED
 		if direction < 0:
-			$Sprite2D.flip_h = true
+			$AnimatedSprite2D.flip_h = true
 		elif direction > 0:
-			$Sprite2D.flip_h = false
+			$AnimatedSprite2D.flip_h = false
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+func _ready() -> void:
+	$Label.text = "Shovel knight fans, reunite!"

@@ -1,15 +1,51 @@
 [gd_scene format=4 uid="uid://vtw18o56fdrb"]
 
 [ext_resource type="Texture2D" uid="uid://dif8g87oh47ol" path="res://icon.svg" id="1_0xm2m"]
-[ext_resource type="Script" uid="uid://cj21p6xgknr8l" path="res://character_body_2d.gd" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://cgscoq0d0uiac" path="res://Assets/collectables_ui.tscn" id="2_kek77"]
+[ext_resource type="Script" uid="uid://cpbas7sel4v2x" path="res://smol_glob.gd" id="4_5vw27"]
 [ext_resource type="Texture2D" uid="uid://bth774yal7oxi" path="res://Sprites/Smol Glob - Idle (Sheet).png" id="4_7mycd"]
-[ext_resource type="Script" uid="uid://bvrqj6a0b3lbr" path="res://character_body_2d_2.gd" id="4_lquwl"]
 [ext_resource type="Texture2D" uid="uid://bpw2rwqoiea0e" path="res://Tile Sheets/paleta_color_blocking.png" id="5_7mycd"]
 [ext_resource type="Texture2D" uid="uid://cm1bqwrnp4d6b" path="res://Tile Sheets/Underground Earth (Tile Sheet).png" id="6_7mycd"]
+[ext_resource type="Script" uid="uid://bvcyqsxxk0dd2" path="res://smol_glob_2.gd" id="6_kek77"]
 [ext_resource type="Texture2D" uid="uid://olo5jjvmogjo" path="res://Backgrounds/Cloudy Sky.png" id="7_272bh"]
+[ext_resource type="Script" uid="uid://drgss71orac2v" path="res://godot.gd" id="7_kek77"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7thrc"]
-size = Vector2(46, 46)
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1bvp3"]
+texture = ExtResource("5_7mycd")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_f57v6"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_1bvp3")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_272bh"]
+texture = ExtResource("6_7mycd")
+texture_region_size = Vector2i(50, 50)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-25, -25, 25, -25, 25, 25, -25, 25)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-25, -25, 25, -25, 25, 25, -25, 25)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-25, -25, 25, -25, 25, 25, -25, 25)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-25, -25, 25, -25, 25, 25, -25, 25)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-25, -25, 25, -25, 25, 25, -25, 25)
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_b2h4h"]
+tile_size = Vector2i(50, 50)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_272bh")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_272bh"]
 atlas = ExtResource("4_7mycd")
@@ -98,73 +134,30 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7thrc"]
 radius = 12.999985
-height = 47.99997
+height = 50.00228
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1bvp3"]
-texture = ExtResource("5_7mycd")
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
+[sub_resource type="CircleShape2D" id="CircleShape2D_f57v6"]
+radius = 67.06713
 
-[sub_resource type="TileSet" id="TileSet_f57v6"]
-physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_1bvp3")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_272bh"]
-texture = ExtResource("6_7mycd")
-texture_region_size = Vector2i(50, 50)
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-25, -25, 25, -25, 25, 25, -25, 25)
-1:0/0 = 0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-25, -25, 25, -25, 25, 25, -25, 25)
-2:0/0 = 0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-25, -25, 25, -25, 25, 25, -25, 25)
-3:0/0 = 0
-3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-25, -25, 25, -25, 25, 25, -25, 25)
-4:0/0 = 0
-4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-25, -25, 25, -25, 25, 25, -25, 25)
-
-[sub_resource type="TileSet" id="TileSet_b2h4h"]
-tile_size = Vector2i(50, 50)
-physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_272bh")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7thrc"]
+size = Vector2(81, 81)
 
 [node name="Main" type="Node" unique_id=1557599828]
 
-[node name="Godot" type="CharacterBody2D" parent="." unique_id=1471267460]
-position = Vector2(351, 301)
-script = ExtResource("1_h2yge")
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=348188294]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer" unique_id=1518401473]
+scroll_ignore_camera_zoom = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground" unique_id=1439451460]
+motion_mirroring = Vector2(700, 400)
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Godot" unique_id=1353376099]
-scale = Vector2(0.359375, 0.359375)
-texture = ExtResource("1_0xm2m")
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer" unique_id=2126922849]
+texture = ExtResource("7_272bh")
+centered = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Godot" unique_id=98015567]
-shape = SubResource("RectangleShape2D_7thrc")
-
-[node name="Camera2D" type="Camera2D" parent="Godot" unique_id=1354537920]
-zoom = Vector2(1.2, 1)
-position_smoothing_enabled = true
-position_smoothing_speed = 3.0
-
-[node name="Smol Glob" type="CharacterBody2D" parent="." unique_id=543449573]
-position = Vector2(25, 551)
-script = ExtResource("4_lquwl")
-metadata/_edit_group_ = true
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Smol Glob" unique_id=452956167]
-sprite_frames = SubResource("SpriteFrames_7thrc")
-frame_progress = 0.8159002
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Smol Glob" unique_id=1042477454]
-position = Vector2(0, 12)
-rotation = 4.7112317
-shape = SubResource("CapsuleShape2D_7thrc")
+[node name="Collectables_UI" parent="CanvasLayer" unique_id=1204107070 instance=ExtResource("2_kek77")]
 
 [node name="Test layer" type="TileMapLayer" parent="." unique_id=1579999658]
 visible = false
@@ -176,19 +169,95 @@ tile_set = SubResource("TileSet_f57v6")
 [node name="Earth layer" type="TileMapLayer" parent="." unique_id=1849132034]
 position = Vector2(-1.5258789e-05, 0)
 scale = Vector2(3.0000002, 3.0000002)
-tile_map_data = PackedByteArray("AAD6/wQAAQAAAAAAAAD7/wQAAQAAAAAAAAD8/wQAAQAAAAAAAAD9/wQAAQAAAAAAAAD+/wQAAQAAAAAAAAD//wQAAQAAAAAAAAAAAAQAAQAAAAAAAAABAAQAAQAAAAAAAAACAAQAAQAAAAAAAAADAAQAAQAAAAAAAAAEAAQAAQAAAAAAAAAFAAQAAQAAAAAAAAD6/wUAAQABAAAAAAD7/wUAAQAEAAAAAAD8/wUAAQABAAAAAAD9/wUAAQABAAAAAAD+/wUAAQABAAAAAAD//wUAAQABAAAAAAAAAAUAAQABAAAAAAABAAUAAQABAAAAAAACAAUAAQABAAAAAAADAAUAAQABAAAAAAAEAAUAAQABAAAAAAAFAAUAAQABAAAAAAD6/wYAAQACAAAAAAD7/wYAAQABAAAAAAD8/wYAAQABAAAAAAD9/wYAAQABAAAAAAD+/wYAAQAEAAAAAAD//wYAAQAEAAAAAAAAAAcAAQAEAAAAAAAAAAYAAQABAAAAAAABAAYAAQABAAAAAAABAAcAAQABAAAAAAD//wcAAQABAAAAAAD9/wcAAQABAAAAAAD8/wcAAQABAAAAAAD7/wcAAQABAAAAAAD+/wcAAQABAAAAAAACAAYAAQABAAAAAAACAAcAAQABAAAAAAAEAAYAAQABAAAAAAADAAcAAQABAAAAAAADAAYAAQABAAAAAAAEAAcAAQABAAAAAAD5/wUAAQABAAAAAAAGAAUAAQABAAAAAAAGAAQAAQAAAAAAAAD5/wQAAQAAAAAAAAAFAAYAAQABAAAAAAA=")
+tile_map_data = PackedByteArray("AAD6/wQAAQAAAAAAAAD7/wQAAQAAAAAAAAD8/wQAAQAAAAAAAAD9/wQAAQAAAAAAAAD+/wQAAQAAAAAAAAD//wQAAQAAAAAAAAAAAAQAAQAAAAAAAAABAAQAAQAAAAAAAAACAAQAAQAAAAAAAAADAAQAAQAAAAAAAAAEAAQAAQAAAAAAAAAFAAQAAQAAAAAAAAD6/wUAAQABAAAAAAD7/wUAAQAEAAAAAAD8/wUAAQABAAAAAAD9/wUAAQABAAAAAAD+/wUAAQABAAAAAAD//wUAAQABAAAAAAAAAAUAAQABAAAAAAABAAUAAQABAAAAAAACAAUAAQABAAAAAAADAAUAAQABAAAAAAAEAAUAAQADAAAAAAAFAAUAAQABAAAAAAD6/wYAAQACAAAAAAD7/wYAAQABAAAAAAD8/wYAAQABAAAAAAD9/wYAAQABAAAAAAD+/wYAAQAEAAAAAAD//wYAAQAEAAAAAAAAAAcAAQAFAAAAAAAAAAYAAQABAAAAAAABAAcAAQAGAAAAAAD//wcAAQAFAAAAAAD9/wcAAQAFAAAAAAD8/wcAAQAFAAAAAAD7/wcAAQAFAAAAAAD+/wcAAQAFAAAAAAACAAYAAQABAAAAAAACAAcAAQAFAAAAAAADAAcAAQAFAAAAAAADAAYAAQABAAAAAAAEAAcAAQAFAAAAAAAGAAUAAQABAAAAAAAGAAQAAQAAAAAAAAAFAAYAAQABAAAAAAABAAYAAQABAAAAAAAIAAEAAQAAAAAAAAAJAAEAAQAAAAAAAAAJAAIAAQACAAAAAAAIAAIAAQABAAAAAAAHAAIAAQAAAAAAAAAKAAAAAQAAAAAAAAAIAP7/AQAAAAAAAAAHAP7/AQABAAAAAAAGAP7/AQAEAAAAAAAGAP3/AQAAAAAAAAAHAP3/AQAAAAAAAAADAP3/AQAAAAAAAAAAAP3/AQAAAAAAAAD9//3/AQAAAAAAAAD6//3/AQAAAAAAAAD3//3/AQADAAAAAAD2//3/AQABAAAAAAD2//z/AQABAAAAAAD1//z/AQAAAAAAAAD2//v/AQAAAAAAAAD3//v/AQAAAAAAAAD3//z/AQABAAAAAAD4//3/AQAAAAAAAAD4//z/AQAAAAAAAAD1//3/AQAAAAAAAAD4/wUAAQAFAAAAAAD3/wUAAQABAAAAAAD4/wYAAQAFAAAAAAD5/wYAAQAFAAAAAAD5/wcAAQAFAAAAAAD6/wcAAQAFAAAAAAD4/wcAAQABAAAAAAD4/wgAAQABAAAAAAD5/wgAAQAFAAAAAAD6/wgAAQAFAAAAAAD7/wgAAQAFAAAAAAD8/wgAAQAFAAAAAAD2/wcAAQABAAAAAAD2/wgAAQACAAAAAAD3/wgAAQABAAAAAAD3/wkAAQABAAAAAAD4/wkAAQABAAAAAAD5/wkAAQABAAAAAAD6/wkAAQABAAAAAAD7/wkAAQADAAAAAAD8/wkAAQAEAAAAAAD2/wkAAQABAAAAAAADAAkAAQABAAAAAAAEAAkAAQABAAAAAAAFAAkAAQABAAAAAAAGAAkAAQABAAAAAAAHAAkAAQABAAAAAAAIAAkAAQABAAAAAAAIAAgAAQABAAAAAAAIAAcAAQABAAAAAAAJAAUAAQADAAAAAAAJAAcAAQABAAAAAAAJAAYAAQABAAAAAAAKAAQAAQAAAAAAAAD9/wgAAQAGAAAAAAD+/wgAAQAFAAAAAAD//wgAAQAFAAAAAAAAAAgAAQAFAAAAAAABAAgAAQAFAAAAAAACAAgAAQAFAAAAAAADAAgAAQAFAAAAAAAEAAgAAQAFAAAAAAAFAAgAAQAFAAAAAAAFAAcAAQAFAAAAAAAGAAcAAQAFAAAAAAAGAAgAAQAFAAAAAAAHAAgAAQAFAAAAAAAHAAcAAQAFAAAAAAAGAAYAAQAFAAAAAAAHAAYAAQAFAAAAAAAHAAUAAQAFAAAAAAAIAAUAAQAFAAAAAAAIAAYAAQAFAAAAAAD3/wcAAQABAAAAAAD2/wYAAQABAAAAAAD2/wUAAQABAAAAAAD3/wYAAQAFAAAAAAD3/wQAAQAAAAAAAAD2/wQAAQAAAAAAAAAJAAgAAQABAAAAAAAJAAkAAQABAAAAAAAKAAgAAQABAAAAAAAKAAcAAQABAAAAAAALAAcAAQABAAAAAAALAAYAAQABAAAAAAAKAAYAAQABAAAAAAAKAAUAAQABAAAAAAALAAUAAQABAAAAAAD1/wUAAQABAAAAAAD0/wUAAQABAAAAAAD0/wYAAQABAAAAAAD1/wYAAQABAAAAAAD1/wcAAQABAAAAAAD0/wcAAQABAAAAAAD1/wgAAQABAAAAAAD1/wQAAQAAAAAAAAD0/wQAAQAAAAAAAAALAAQAAQAAAAAAAAD5/wUAAQABAAAAAAD4/wQAAQAFAAAAAAD5/wQAAQAFAAAAAAAHAAQAAQAFAAAAAAAIAAQAAQAFAAAAAAAJAAQAAQAFAAAAAAAEAAYAAQABAAAAAAD9/wkAAQAFAAAAAAD+/wkAAQAFAAAAAAD//wkAAQAFAAAAAAAAAAkAAQAFAAAAAAABAAkAAQAFAAAAAAACAAkAAQAFAAAAAAABAAoAAQAFAAAAAAAAAAoAAQAFAAAAAAD//woAAQAFAAAAAAD+/woAAQAFAAAAAAD9/woAAQABAAAAAAACAAoAAQABAAAAAAACAAsAAQABAAAAAAABAAsAAQAFAAAAAAAAAAsAAQAFAAAAAAD//wsAAQAFAAAAAAD+/wsAAQABAAAAAAD9/wsAAQABAAAAAAACAAwAAQABAAAAAAABAAwAAQAFAAAAAAAAAAwAAQAFAAAAAAD//wwAAQAFAAAAAAD+/wwAAQAFAAAAAAD9/wwAAQAFAAAAAAACAA0AAQABAAAAAAABAA0AAQABAAAAAAAAAA0AAQABAAAAAAD//w0AAQABAAAAAAD+/w0AAQABAAAAAAD9/w0AAQABAAAAAAADAAoAAQABAAAAAAADAAsAAQABAAAAAAADAAwAAQABAAAAAAADAA0AAQABAAAAAAAEAAwAAQABAAAAAAAEAAsAAQABAAAAAAAEAAoAAQABAAAAAAAFAAoAAQABAAAAAAAFAAsAAQABAAAAAAAEAA0AAQABAAAAAAAFAA0AAQABAAAAAAAGAAwAAQABAAAAAAAGAAsAAQABAAAAAAAGAAoAAQABAAAAAAAFAAwAAQABAAAAAAAGAA0AAQABAAAAAAAFAA4AAQABAAAAAAAEAA4AAQABAAAAAAADAA8AAQABAAAAAAACAA8AAQABAAAAAAABAA8AAQABAAAAAAAAAA8AAQABAAAAAAD//w8AAQABAAAAAAD+/w8AAQABAAAAAAD+/w4AAQABAAAAAAD9/w4AAQABAAAAAAD9/w8AAQABAAAAAAAAAA4AAQABAAAAAAABAA4AAQABAAAAAAACAA4AAQABAAAAAAD//w4AAQABAAAAAAADAA4AAQABAAAAAAAEAA8AAQABAAAAAAAHAAwAAQABAAAAAAAHAA0AAQABAAAAAAAHAAoAAQABAAAAAAAHAAsAAQABAAAAAAAIAAoAAQABAAAAAAAIAAsAAQABAAAAAAAIAAwAAQABAAAAAAAJAAoAAQABAAAAAAAJAAsAAQABAAAAAAAKAAkAAQABAAAAAAALAAgAAQABAAAAAAAKAAoAAQABAAAAAAD8/woAAQABAAAAAAD7/woAAQABAAAAAAD6/woAAQABAAAAAAD5/woAAQABAAAAAAD4/woAAQABAAAAAAD3/woAAQABAAAAAAD3/wsAAQABAAAAAAD4/wsAAQABAAAAAAD5/wsAAQABAAAAAAD6/wsAAQABAAAAAAD7/wsAAQABAAAAAAD8/wsAAQABAAAAAAD4/wwAAQABAAAAAAD3/wwAAQABAAAAAAD5/wwAAQABAAAAAAD6/wwAAQABAAAAAAD7/wwAAQABAAAAAAD8/wwAAQABAAAAAAD8/w0AAQABAAAAAAD7/w0AAQABAAAAAAD6/w0AAQABAAAAAAD5/w0AAQABAAAAAAD5/w4AAQABAAAAAAD6/w4AAQABAAAAAAD7/w4AAQABAAAAAAD8/w4AAQABAAAAAAD8/w8AAQABAAAAAAD7/w8AAQABAAAAAAD6/w8AAQABAAAAAAD4/w0AAQABAAAAAAD2/wsAAQABAAAAAAD2/woAAQABAAAAAAD1/woAAQABAAAAAAD1/wkAAQABAAAAAAD0/wgAAQABAAAAAAD0/wkAAQABAAAAAAA=")
 tile_set = SubResource("TileSet_b2h4h")
 metadata/_edit_group_ = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=348188294]
+[node name="Smol Glob" type="CharacterBody2D" parent="." unique_id=543449573]
+position = Vector2(25, 551)
+script = ExtResource("4_5vw27")
+metadata/_edit_group_ = true
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer" unique_id=1518401473]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Smol Glob" unique_id=452956167]
+position = Vector2(16, 20.5)
+sprite_frames = SubResource("SpriteFrames_7thrc")
+frame_progress = 0.65301114
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground" unique_id=1439451460]
-position = Vector2(122, 0)
-motion_mirroring = Vector2(700, 400)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Smol Glob" unique_id=1042477454]
+position = Vector2(16, 32)
+rotation = 4.7112317
+shape = SubResource("CapsuleShape2D_7thrc")
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer" unique_id=2126922849]
-position = Vector2(-121, 1)
-texture = ExtResource("7_272bh")
-centered = false
+[node name="Interaction_bubble" type="CollisionShape2D" parent="Smol Glob" unique_id=515248492]
+position = Vector2(16, 32)
+shape = SubResource("CircleShape2D_f57v6")
+disabled = true
+
+[node name="Label" type="Label" parent="Smol Glob" unique_id=1755036479]
+offset_left = -11.0
+offset_top = -47.0
+offset_right = 47.0
+offset_bottom = -12.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "GLOB!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Smol Glob2" type="CharacterBody2D" parent="." unique_id=1109493030]
+position = Vector2(-285, 1899)
+script = ExtResource("6_kek77")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Smol Glob2" unique_id=1061990369]
+position = Vector2(16, 20.5)
+sprite_frames = SubResource("SpriteFrames_7thrc")
+frame_progress = 0.68788344
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Smol Glob2" unique_id=953148584]
+position = Vector2(16, 32)
+rotation = 4.7112317
+shape = SubResource("CapsuleShape2D_7thrc")
+
+[node name="Interaction_bubble" type="CollisionShape2D" parent="Smol Glob2" unique_id=1205849235]
+position = Vector2(16, 32)
+shape = SubResource("CircleShape2D_f57v6")
+disabled = true
+
+[node name="Label" type="Label" parent="Smol Glob2" unique_id=1991343659]
+offset_left = -11.0
+offset_top = -47.0
+offset_right = 47.0
+offset_bottom = -12.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "GLOB!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Godot" type="CharacterBody2D" parent="." unique_id=1471267460]
+position = Vector2(370, 227)
+script = ExtResource("7_kek77")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Godot" unique_id=1353376099]
+position = Vector2(-29.531237, 32.718742)
+scale = Vector2(0.63330096, 0.63623047)
+texture = ExtResource("1_0xm2m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Godot" unique_id=98015567]
+position = Vector2(-30, 33)
+shape = SubResource("RectangleShape2D_7thrc")
+
+[node name="Camera2D" type="Camera2D" parent="Godot" unique_id=1354537920]
+zoom = Vector2(0.5, 0.5)
+position_smoothing_enabled = true
+position_smoothing_speed = 3.0
+
+[node name="Label" type="Label" parent="Godot" unique_id=2143375381]
+offset_left = -370.0
+offset_top = -227.0
+offset_right = -330.0
+offset_bottom = -204.0

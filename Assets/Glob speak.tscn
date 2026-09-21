@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://enae5yrjfj7i"]
+
+[ext_resource type="Script" uid="uid://cpbas7sel4v2x" path="res://smol_glob.gd" id="1_0252h"]
+[ext_resource type="Texture2D" uid="uid://bth774yal7oxi" path="res://Sprites/Smol Glob - Idle (Sheet).png" id="2_8wv2n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_272bh"]
+atlas = ExtResource("2_8wv2n")
+region = Rect2(450, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vw27"]
+atlas = ExtResource("2_8wv2n")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kek77"]
+atlas = ExtResource("2_8wv2n")
+region = Rect2(500, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4c57u"]
+atlas = ExtResource("2_8wv2n")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efxa6"]
+atlas = ExtResource("2_8wv2n")
+region = Rect2(100, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dg77c"]
+atlas = ExtResource("2_8wv2n")
+region = Rect2(150, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycdy4"]
+atlas = ExtResource("2_8wv2n")
+region = Rect2(200, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w48qg"]
+atlas = ExtResource("2_8wv2n")
+region = Rect2(250, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vivmo"]
+atlas = ExtResource("2_8wv2n")
+region = Rect2(300, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cqfq"]
+atlas = ExtResource("2_8wv2n")
+region = Rect2(350, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yaehf"]
+atlas = ExtResource("2_8wv2n")
+region = Rect2(400, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ummfh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_272bh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vw27")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kek77")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4c57u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efxa6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dg77c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycdy4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w48qg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vivmo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cqfq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yaehf")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vtqar"]
+radius = 12.999985
+height = 50.00228
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wa76b"]
+radius = 67.06713
+
+[node name="Node2D" type="Node2D" unique_id=29429267]
+
+[node name="Smol Glob" type="CharacterBody2D" parent="." unique_id=441589190]
+position = Vector2(25, 551)
+script = ExtResource("1_0252h")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Smol Glob" unique_id=1417580039]
+position = Vector2(16, 20.5)
+sprite_frames = SubResource("SpriteFrames_ummfh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Smol Glob" unique_id=805129632]
+position = Vector2(16, 32)
+rotation = 4.7112317
+shape = SubResource("CapsuleShape2D_vtqar")
+
+[node name="Interaction_bubble" type="CollisionShape2D" parent="Smol Glob" unique_id=678307097]
+position = Vector2(16, 32)
+shape = SubResource("CircleShape2D_wa76b")
+disabled = true
+
+[node name="Label" type="Label" parent="Smol Glob" unique_id=1671406043]
+offset_left = -11.0
+offset_top = -47.0
+offset_right = 47.0
+offset_bottom = -12.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "GLOB!"
+horizontal_alignment = 1
+vertical_alignment = 1
