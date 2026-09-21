@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://enae5yrjfj7i"]
 
-[ext_resource type="Script" uid="uid://cpbas7sel4v2x" path="res://smol_glob.gd" id="1_0252h"]
+[ext_resource type="Script" uid="uid://cpbas7sel4v2x" path="res://GDscripts/smol_glob.gd" id="1_0252h"]
 [ext_resource type="Texture2D" uid="uid://bth774yal7oxi" path="res://Sprites/Smol Glob - Idle (Sheet).png" id="2_8wv2n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_272bh"]

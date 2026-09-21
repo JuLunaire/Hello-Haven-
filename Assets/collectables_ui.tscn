@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cgscoq0d0uiac"]
 
 [ext_resource type="Texture2D" uid="uid://gh3oem8q4uku" path="res://Sprites/Strawberry.png" id="1_h4rxb"]
+[ext_resource type="Script" uid="uid://db26grwq3peud" path="res://GDscripts/collectables_ui.gd" id="1_nmjqa"]
 
 [node name="Collectables_UI" type="Control" unique_id=1204107070]
 layout_mode = 3
@@ -9,7 +10,7 @@ offset_left = 30.0
 offset_top = 30.0
 offset_right = 70.0
 offset_bottom = 70.0
-metadata/_edit_group_ = true
+script = ExtResource("1_nmjqa")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=343828705]
 layout_mode = 0
@@ -18,6 +19,35 @@ offset_bottom = 40.0
 texture = ExtResource("1_h4rxb")
 
 [node name="Label" type="Label" parent="." unique_id=1941817405]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 48.0
+offset_right = 88.0
+offset_bottom = 42.0
+theme_override_colors/font_shadow_color = Color(0.46249998, 0.06503906, 0.06503906, 0.80784315)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="You Win!" type="RichTextLabel" parent="." unique_id=501855200]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 670.0
+offset_bottom = 370.0
+theme_override_colors/default_color = Color(0.85490197, 0.5137255, 0.039215688, 1)
+theme_override_colors/font_selected_color = Color(0.653125, 0.26941407, 0.26941407, 0)
+theme_override_colors/font_outline_color = Color(0.16078432, 0.16078432, 0.16078432, 1)
+theme_override_colors/font_shadow_color = Color(0.12533118, 0.06523431, 0.06523431, 1)
+theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/bold_font_size = 50
+bbcode_enabled = true
+text = "[b]YOU WIN![/b] 
+
+Keep on touch for updates!
+Jumpstart, here we go!!
+"
+horizontal_alignment = 1
+vertical_alignment = 1

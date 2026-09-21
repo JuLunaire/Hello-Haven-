@@ -32,4 +32,4 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 func _ready() -> void:
-	$Label.text = "Hello?"
+	$Label.text = "The Absolute Peak..."

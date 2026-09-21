@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cv5jlb5vb6v6s"]
 
-[ext_resource type="Script" uid="uid://chsf1nhl24og2" path="res://Assets/strawberry.gd" id="1_ybnmu"]
+[ext_resource type="Script" uid="uid://chsf1nhl24og2" path="res://GDscripts/strawberry.gd" id="1_ybnmu"]
 [ext_resource type="Texture2D" uid="uid://gh3oem8q4uku" path="res://Sprites/Strawberry.png" id="2_tkt6h"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7thrc"]

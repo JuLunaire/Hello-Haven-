@@ -3,12 +3,24 @@ class_name Player extends CharacterBody2D
 
 const SPEED = 600.0
 const JUMP_VELOCITY = -1000.0
+var spawn_position : Vector2
+
+@export var Border_status: int = -1
 
 
+func _ready() -> void:
+	$Label.text = "I'm a Strawberry-meter" #Strawberry
+	spawn_position = global_position
+	EventController.connect("Border_Crossed", on_event_Border_Crossed)
+	
+func on_event_Border_Crossed(value:int)->void:
+	global_position = spawn_position
+	velocity.y = 0
+	
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity += get_gravity() * delta 
 
 	# Handle jump.
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
@@ -16,7 +28,9 @@ func _physics_process(delta: float) -> void:
 		
 	# Active falling
 	if Input.is_action_pressed("Drop") and not is_on_floor():
-		velocity.y = move_toward(velocity.y, 1000, SPEED)
+		velocity += get_gravity() * delta * 2
+	# Out of bounds respawn
+	
 	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -31,6 +45,3 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
-	
-func _ready() -> void:
-	$Label.text = "I'm a Strawberry-meter" #Strawberry

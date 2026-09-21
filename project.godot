@@ -13,7 +13,7 @@ config_version=5
 config/name="Hello Haven!"
 run/main_scene="uid://vtw18o56fdrb"
 config/features=PackedStringArray("4.7", "Mobile")
-config/icon="res://icon.svg"
+config/icon="res://Sprites/icon.svg"
 
 [autoload]
 
